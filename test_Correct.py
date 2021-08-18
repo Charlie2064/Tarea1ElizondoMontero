@@ -1,4 +1,15 @@
-#Un caso de éxito para multiple_op  y verify_array_op 
+#Un caso de éxito para multiple_op  y verify_array_op
+# ERR7 -2.5
+
+# ERR9 -2
+# ERR8 -5
+# ERR4x4 -10
+# Varios comentarios:
+# No tiene sentido hacer 2 returns seguidos, solo el 1ero se ejectua,
+# si quieren retornar muchas cosas deben de ahcer return VAL1, VAL2, VAL3
+# La idea no era reescribir las funciones sino usar un import
+# Su verify_array_op asume un tamaño de 4 miembros y esto no es
+# necesariamente cierto
 
 import pytest #Librerías
 import numpy as np
@@ -15,7 +26,7 @@ d = np.random.randint (1, 11)
 
 rand = [a, b, c, d] #Se crea el arreglo random
 
-def multiple_op (n, f, array): 
+def multiple_op (n, f, array):
     for i in range (1, n+1): #Función facotrial
         f = f * i #empezando en 1, multiplico por el valor anterior y sumo
 
@@ -24,7 +35,7 @@ def multiple_op (n, f, array):
 
     array = [x, y, f] #Arreglo de salida
 
-    return ("Dado el Parámetro n =", n, ":")                        
+    return ("Dado el Parámetro n =", n, ":")
     return (array)
 
 
@@ -39,13 +50,13 @@ def verify_array_op (rand): #Función para el arreglo de entrada
 
     for i in range (1, b + 1):
         s = s * i
-        
+
     for i in range (1, c + 1):
         t = t * i
-        
+
     for i in range (1, d + 1):
         u = u * i
-    
+
     z = [[a * a, 2 * a, r], [b * b, 2 * b, s], [c * c, 2 * c, t], [d * d, 2 * d, u]] #Array de arrays
     return ("Dado el arreglo: ")
     return (rand)
@@ -54,7 +65,7 @@ def verify_array_op (rand): #Función para el arreglo de entrada
 
 def test ():
     assert type (n) == int, "ERROR #00" #Error para cuando parámetro inicial no es un número
-    
+
     assert type (a) == int, "ERROR #01" #Errores para cuando algún parámetro dentro del arreglo no es un número
     assert type (b) == int, "ERROR #01"
     assert type (c) == int, "ERROR #01"

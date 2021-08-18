@@ -1,4 +1,7 @@
 import numpy as np  # Librerías
+# ERR10x2 -4
+# ERR3x2 -3 Nunca hace verificación de los parámetros
+
 
 n = np.random.randint(1, 11)  # Función random
 f = 1  # Valor donde debe empezar para calcular el factorial
